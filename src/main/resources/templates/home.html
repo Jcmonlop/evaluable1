@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}"></title>
+</head>
+<body>	
+	<a href="http://localhost:8080/asignatura/all">Listado de asignaturas</a>
+	<a href="http://localhost:8080/asignatura/listado/sin">Listado sin número de alumnos</a>
+	<a href="http://localhost:8080/asignatura/listado/con">Listado con número de alumnos</a>
+	<img th:src="@{/image/logo.png}" style="width: 180px;"></img>
+<h1 th:text="${tituloH1}"></h1>
+<p th:text="${parrafo1}"></p>
+<p th:text="${parrafo2}"></p>
+<p th:text="${parrafo3}"></p>
+</body>
+</html>

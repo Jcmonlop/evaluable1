@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+	<style>
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+		}
+
+		td, th {
+			border: 1px solid darkgray;
+			padding: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://localhost:8080/home">Página de Inicio</a>
+	<a href="http://localhost:8080/asignatura/all">Listado completo</a>
+	<h1 th:text="${tituloH1}"></h1>
+<table>
+	<thead>
+		<tr>
+			<td><strong>ID</strong></td>
+			<td><strong>NOMBRE</strong></td>
+			<td><strong>DESCRIPCIÓN</strong></td>
+			<td><strong>TIPO</strong></td>
+			<td><strong>CRÉDITOS</strong></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="asignatura : ${listaAsignaturas}">		
+			<td th:text="${asignatura.id}"></td>
+			<td th:text="${asignatura.nombre}"></td>
+			<td th:text="${asignatura.descripcion}"></td>
+			<td><a th:text="${asignatura.tipo}"th:href="@{/asignatura/listado} + '?tipo=' + ${asignatura.tipo}"></a></td>
+			<td th:text="${asignatura.numeroCreditos}"></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+
+</html>
